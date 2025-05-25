@@ -19,7 +19,7 @@ function App() {
 
   const fetchLanguages = async () => {
     try {
-      const response = await fetch("http://localhost:7860/languages");
+      const response = await fetch("https://ocr-translate-backend.onrender.com/languages");
       const data = await response.json();
       setLanguages(data);
     } catch (error) {
@@ -67,7 +67,7 @@ function App() {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:7860/translate/text", {
+      const response = await fetch("https://ocr-translate-backend.onrender.com/translate/text", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -108,7 +108,7 @@ function App() {
     formData.append("target_lang", targetLanguage);
 
     try {
-      const response = await fetch("http://localhost:7860/translate/image", {
+      const response = await fetch("https://ocr-translate-backend.onrender.com/translate/image", {
         method: "POST",
         body: formData,
       });
